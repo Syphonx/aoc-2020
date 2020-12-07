@@ -6,12 +6,29 @@
 
 #include <Windows.h>
 #include <process.h>
-#include <stdio.h>
-#include <iosfwd>
-#include <fstream>
-#include <vector>
+
 #include <iostream>
-#include <iterator>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <forward_list>
+#include <list>
+#include <deque>
+#include <array>
+#include <vector>
+#include <map>
+#include <algorithm>
+#include <numeric>
+#include <set>
+#include <unordered_set>
+#include <cassert>
+
+typedef int32_t int32;
+typedef int16_t int16;
+typedef int8_t int8;
+typedef uint32_t uint32;
+typedef uint16_t uint16;
+typedef uint8_t uint8;
 
 class IDay
 {
@@ -75,7 +92,7 @@ public:
 	const char*	m_msg;
 };
 
-static std::vector<int32_t> GetInput(std::string filepath)
+static std::vector<int32_t> GetIntInput(std::string filepath)
 {
 	std::ifstream is(filepath);
 	std::istream_iterator<int32_t> start(is), end;
@@ -94,4 +111,39 @@ static std::vector<int32_t> GetInput(std::string filepath)
 #endif
 
 	return numbers;
+}
+
+static std::vector<std::string> GetStrInput(std::string filepath)
+{
+	std::vector<std::string> lines;
+	std::string line;
+	std::ifstream infile(filepath, std::ios_base::in);
+
+	lines.clear();
+
+	while (getline(infile, line, '\n'))
+	{
+		lines.push_back(line);
+	}
+
+	return lines;
+}
+
+static bool Split(std::vector<std::string> &out_result, std::string s, std::string delimiter)
+{
+	bool success = false;
+	size_t start = 0;
+	size_t end = s.find(delimiter);
+
+	while (end != std::string::npos)
+	{
+		out_result.push_back(s.substr(start, end - start));
+		start = end + delimiter.length();
+		end = s.find(delimiter, start);
+		success = true;
+	}
+
+	out_result.push_back(s.substr(start, end));
+
+	return success;
 }
