@@ -6,3 +6,4 @@
 
 #include "../src/day1.h"
 #include "../src/day2.h"
+#include "../src/day3.h"
