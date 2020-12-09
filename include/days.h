@@ -7,3 +7,5 @@
 #include "../src/day1.h"
 #include "../src/day2.h"
 #include "../src/day3.h"
+#include "../src/day4.h"
+#include "../src/day5.h"

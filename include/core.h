@@ -23,6 +23,7 @@
 #include <unordered_set>
 #include <cassert>
 #include <stack>
+#include <regex>
 
 typedef int64_t int64;
 typedef int32_t int32;
@@ -150,4 +151,14 @@ static bool Split(std::vector<std::string> &out_result, std::string s, std::stri
 	out_result.push_back(s.substr(start, end));
 
 	return success;
+}
+
+static bool IsInteger(const std::string& s)
+{
+	return std::regex_match(s, std::regex("[(-|+)|][0-9]+"));
+}
+
+static bool IsColour(const std::string& s)
+{
+	return std::regex_match(s, std::regex("#[a-z0-9]{6}"));
 }

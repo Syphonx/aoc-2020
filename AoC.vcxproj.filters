@@ -22,7 +22,13 @@
     <Filter Include="Inputs">
       <UniqueIdentifier>{26340be5-f333-47ce-b152-f87de79eaf54}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Day3.cpp">
+    <Filter Include="Source Files\Day 5">
+      <UniqueIdentifier>{48beb82c-68af-4c3a-b3dd-093b82a25345}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day 4">
+      <UniqueIdentifier>{0ee9068d-ed17-4238-8da7-0df9f4784124}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day 3">
       <UniqueIdentifier>{1ba48a6d-4b2d-494a-96f3-33eded90683a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -37,7 +43,13 @@
       <Filter>Source Files\Day 2</Filter>
     </ClCompile>
     <ClCompile Include="src\day3.cpp">
-      <Filter>Source Files\Day3.cpp</Filter>
+      <Filter>Source Files\Day 3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day4.cpp">
+      <Filter>Source Files\Day 4</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day5.cpp">
+      <Filter>Source Files\Day 5</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -54,7 +66,13 @@
       <Filter>Source Files\Day 2</Filter>
     </ClInclude>
     <ClInclude Include="src\day3.h">
-      <Filter>Source Files\Day3.cpp</Filter>
+      <Filter>Source Files\Day 3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\day4.h">
+      <Filter>Source Files\Day 4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\day5.h">
+      <Filter>Source Files\Day 5</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +83,12 @@
       <Filter>Inputs</Filter>
     </Text>
     <Text Include="inputs\day3.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="inputs\day4.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="inputs\day5.txt">
       <Filter>Inputs</Filter>
     </Text>
   </ItemGroup>
