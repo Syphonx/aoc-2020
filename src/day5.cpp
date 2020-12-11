@@ -80,64 +80,77 @@ struct BoardingPass
 
 static int32 Solve_1(const std::vector<std::string> input)
 {
-	int32	index;
-	int32	result = 0;
+	int32			index;
+	int32			result = 0;
+	BoardingPass	pass;
+
+	//	function binary_search(A, n, T) is
+    //	L := 0
+    //	R := n - 1
+    //	while L <= R do
+    //	    m := floor((L + R) / 2)
+    //	    if A[m] < T then
+    //	        L := m + 1
+    //	    else if A[m] > T then
+    //	        R := m - 1
+    //	    else:
+    //	        return m
+    //	return unsuccessful
 
 	for (index = 0; index < input.size(); index++)
 	{
 		int32				i = 0;
-		BoardingPass		pass;
-		int32				lower = 0;
-		int32				upper = 127;
-		const std::string&	data = input[i];
+		int32				L = 0;
+		int32				R = 127;
+		const std::string&	data = input[index];
 		char				letter = ' ';
 
 		while (i < data.size())
 		{
 			letter = data[i];
 
-			int32		diff = (upper - lower);
+			int32		diff = (R - L);
 			int32		delta = std::ceil((diff + 0.5f) / 2);
-
-			if			(letter == 'F')
+			
+			if (i == 6)
 			{
-				upper = upper - delta;
+				pass.Row = min(L, R);
+				L = 0;
+				R = 7;
 			}
-			else if		(letter == 'B')
+			else
 			{
-				lower = lower + delta;
-			}
-
-			if (i == 8)
-			{
-				pass.Row = min(lower, upper);
-				lower = 0;
-				upper = 7;
-				diff = (upper - lower);
-				delta = std::ceil((diff + 0.5f) / 2);
+				if			(letter == 'F')
+				{
+					R -= delta;
+				}
+				else if		(letter == 'B')
+				{
+					L += delta;
+				}
 			}
 
 			if			(letter == 'L')
 			{
-				lower = lower + delta;
+				R -= delta;
 			}
 			else if		(letter == 'R')
 			{
-				upper = upper - delta;
-			}
+				L += delta;
+			}			
 
-			if (i == 10)
+			if (i == 9)
 			{
-				pass.Column = max(lower, upper);
+				pass.Column = max(L, R);
 			}
 
 			i++;
 		}
 
-		printf("ID: %d\n", pass.GetID());
 		result = max(result, pass.GetID());
 	}
-
+	
+	printf("ID: %d\n", result);
 	return result;
 }
 
@@ -148,8 +161,9 @@ static int32 Solve_2(const std::vector<std::string> input)
 
 void Day5::Part1()
 {
+	assert(Solve_1({ "FBFBBFFRLR" }) == 357);
 	assert(Solve_1({ "BFFFBBFRRR", "FFFBBBFRRR", "BBFFBBFRLL" }) == 820);
-	//	Solve_1(GetStrInput("inputs/day1.txt"));
+	Solve_1(GetStrInput("inputs/day5.txt"));
 }
 
 void Day5::Part2()
