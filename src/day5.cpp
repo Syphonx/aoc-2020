@@ -60,6 +60,18 @@
 //	As a sanity check, look through your list of boarding passes. What is the highest 
 //	seat ID on a boarding pass?
 //
+//	--- Part Two ---
+//	Ding! The "fasten seat belt" signs have turned on. Time to find your seat.
+//	
+//	It's a completely full flight, so your seat should be the only missing boarding pass
+//	in your list. However, there's a catch: some of the seats at the very front and back 
+//	of the plane don't exist on this aircraft, so they'll be missing from your list as well.
+//	
+//	Your seat wasn't at the very front or back, though; the seats with IDs +1 and -1 from 
+//	yours will be in your list.
+//	
+//	What is the ID of your seat?
+//	
 
 struct BoardingPass
 {
@@ -84,19 +96,6 @@ static int32 Solve_1(const std::vector<std::string> input)
 	int32			result = 0;
 	BoardingPass	pass;
 
-	//	function binary_search(A, n, T) is
-    //	L := 0
-    //	R := n - 1
-    //	while L <= R do
-    //	    m := floor((L + R) / 2)
-    //	    if A[m] < T then
-    //	        L := m + 1
-    //	    else if A[m] > T then
-    //	        R := m - 1
-    //	    else:
-    //	        return m
-    //	return unsuccessful
-
 	for (index = 0; index < input.size(); index++)
 	{
 		int32				i = 0;
@@ -110,7 +109,7 @@ static int32 Solve_1(const std::vector<std::string> input)
 			letter = data[i];
 
 			int32		diff = (R - L);
-			int32		delta = std::ceil((diff + 0.5f) / 2);
+			int32		delta = (int32)std::ceil((diff + 0.5f) / 2);
 			
 			if (i == 6)
 			{
@@ -156,7 +155,77 @@ static int32 Solve_1(const std::vector<std::string> input)
 
 static int32 Solve_2(const std::vector<std::string> input)
 {
-	return 0;
+	int32				index;
+	BoardingPass		pass;
+	std::vector<int32>	seats;
+
+	for (index = 0; index < input.size(); index++)
+	{
+		int32				i = 0;
+		int32				L = 0;
+		int32				R = 127;
+		const std::string&	data = input[index];
+		char				letter = ' ';
+
+		while (i < data.size())
+		{
+			letter = data[i];
+
+			int32		diff = (R - L);
+			int32		delta = (int32)std::ceil((diff + 0.5f) / 2);
+			
+			if (i == 6)
+			{
+				pass.Row = min(L, R);
+				L = 0;
+				R = 7;
+			}
+			else
+			{
+				if			(letter == 'F')
+				{
+					R -= delta;
+				}
+				else if		(letter == 'B')
+				{
+					L += delta;
+				}
+			}
+
+			if			(letter == 'L')
+			{
+				R -= delta;
+			}
+			else if		(letter == 'R')
+			{
+				L += delta;
+			}			
+
+			if (i == 9)
+			{
+				pass.Column = max(L, R);
+				seats.push_back(pass.GetID());
+			}
+
+			i++;
+		}
+	}
+
+	// Partial solution, answer was 610 but my data that solved #1 fine didn't work so :shrug:
+	int32 result = 0;
+	std::sort(seats.begin(), seats.end(), [](const int32& a, const int32& b) { return a < b; });
+	for (const int32 seat : seats)
+	{
+		if (result != 0 && (seat - result) != 1)
+		{
+			std::cout << "MISSING ID BETWEEN " << seat << " AND " << result << "!!!" << std::endl;
+		}
+		result = seat;
+	}
+
+	printf("Seat: (%d)\n", result);
+
+	return 1;
 }
 
 void Day5::Part1()
@@ -168,4 +237,5 @@ void Day5::Part1()
 
 void Day5::Part2()
 {
+	Solve_2(GetStrInput("inputs/day5.txt"));
 }
