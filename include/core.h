@@ -24,6 +24,8 @@
 #include <cassert>
 #include <stack>
 #include <regex>
+#include <cctype>
+#include <locale>
 
 typedef int64_t int64;
 typedef int32_t int32;
@@ -151,6 +153,36 @@ static bool Split(std::vector<std::string> &out_result, std::string s, std::stri
 	out_result.push_back(s.substr(start, end));
 
 	return success;
+}
+
+static inline void LeftTrim(std::string &s)
+{
+	s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](unsigned char ch)
+	{
+		return !std::isspace(ch);
+	}));
+}
+
+static inline void RightTrim(std::string &s)
+{
+	s.erase(std::find_if(s.rbegin(), s.rend(), [](unsigned char ch)
+	{
+		return !std::isspace(ch);
+	}).base(), s.end());
+}
+
+static inline void Trim(std::string &s)
+{
+	LeftTrim(s);
+	RightTrim(s);
+}
+
+static inline void Remove(std::string &s, const std::string& tokens)
+{
+	for (char c : tokens)
+	{
+		s.erase(std::remove(s.begin(), s.end(), c), s.end());
+	}
 }
 
 static bool IsInteger(const std::string& s)

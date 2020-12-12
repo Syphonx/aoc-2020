@@ -10,3 +10,4 @@
 #include "../src/day4.h"
 #include "../src/day5.h"
 #include "../src/day6.h"
+#include "../src/day7.h"
