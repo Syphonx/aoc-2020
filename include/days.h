@@ -11,3 +11,5 @@
 #include "../src/day5.h"
 #include "../src/day6.h"
 #include "../src/day7.h"
+#include "../src/day8.h"
+#include "../src/day9.h"

@@ -120,6 +120,15 @@ static std::vector<int32_t> GetIntInput(std::string filepath)
 	return numbers;
 }
 
+static std::vector<uint64> GetUInt64Input(std::string filepath)
+{
+	std::ifstream is(filepath);
+	std::istream_iterator<uint64> start(is), end;
+	std::vector<uint64> numbers(start, end);
+
+	return numbers;
+}
+
 static std::vector<std::string> GetStrInput(std::string filepath)
 {
 	std::vector<std::string> lines;
