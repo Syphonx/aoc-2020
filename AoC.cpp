@@ -7,7 +7,7 @@
 
 int main()
 {
-	Day5 puzzle;
+	Day6 puzzle;
 	puzzle.Part1();
 	puzzle.Part2();
 }
