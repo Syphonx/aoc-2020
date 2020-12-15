@@ -43,6 +43,9 @@
     <Filter Include="Source Files\Day 9">
       <UniqueIdentifier>{1179ce2a-1a65-4176-864d-3306e8950c9d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Day 10">
+      <UniqueIdentifier>{9e7de138-1129-4f89-80a8-842ab9136c06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AoC.cpp">
@@ -74,6 +77,9 @@
     </ClCompile>
     <ClCompile Include="src\day9.cpp">
       <Filter>Source Files\Day 9</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day10.cpp">
+      <Filter>Source Files\Day 10</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +116,9 @@
     <ClInclude Include="src\day9.h">
       <Filter>Source Files\Day 9</Filter>
     </ClInclude>
+    <ClInclude Include="src\day10.h">
+      <Filter>Source Files\Day 10</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="inputs\day1.txt">
@@ -137,6 +146,9 @@
       <Filter>Inputs</Filter>
     </Text>
     <Text Include="inputs\day9.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="inputs\day10.txt">
       <Filter>Inputs</Filter>
     </Text>
   </ItemGroup>
