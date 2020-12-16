@@ -155,6 +155,7 @@
     <ClCompile Include="AoC.cpp" />
     <ClCompile Include="src\day1.cpp" />
     <ClCompile Include="src\day10.cpp" />
+    <ClCompile Include="src\day11.cpp" />
     <ClCompile Include="src\day2.cpp" />
     <ClCompile Include="src\day3.cpp" />
     <ClCompile Include="src\day4.cpp" />
@@ -169,6 +170,7 @@
     <ClInclude Include="include\days.h" />
     <ClInclude Include="src\day1.h" />
     <ClInclude Include="src\day10.h" />
+    <ClInclude Include="src\day11.h" />
     <ClInclude Include="src\day2.h" />
     <ClInclude Include="src\day3.h" />
     <ClInclude Include="src\day4.h" />
@@ -181,6 +183,7 @@
   <ItemGroup>
     <Text Include="inputs\day1.txt" />
     <Text Include="inputs\day10.txt" />
+    <Text Include="inputs\day11.txt" />
     <Text Include="inputs\day2.txt" />
     <Text Include="inputs\day3.txt" />
     <Text Include="inputs\day4.txt" />
