@@ -23,32 +23,32 @@
     <ProjectGuid>{5E1379DE-0A00-47F0-9938-33901734B646}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>AoC</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -156,6 +156,7 @@
     <ClCompile Include="src\day1.cpp" />
     <ClCompile Include="src\day10.cpp" />
     <ClCompile Include="src\day11.cpp" />
+    <ClCompile Include="src\day12.cpp" />
     <ClCompile Include="src\day2.cpp" />
     <ClCompile Include="src\day3.cpp" />
     <ClCompile Include="src\day4.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="src\day1.h" />
     <ClInclude Include="src\day10.h" />
     <ClInclude Include="src\day11.h" />
+    <ClInclude Include="src\day12.h" />
     <ClInclude Include="src\day2.h" />
     <ClInclude Include="src\day3.h" />
     <ClInclude Include="src\day4.h" />
@@ -184,6 +186,7 @@
     <Text Include="inputs\day1.txt" />
     <Text Include="inputs\day10.txt" />
     <Text Include="inputs\day11.txt" />
+    <Text Include="inputs\day12.txt" />
     <Text Include="inputs\day2.txt" />
     <Text Include="inputs\day3.txt" />
     <Text Include="inputs\day4.txt" />
