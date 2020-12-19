@@ -4,12 +4,6 @@
 
 #include "Day13.h"
 
-struct Bus
-{
-	int32				id;
-	int32				time;
-};
-
 struct Schedule
 {
 	int32				earliest;
@@ -61,7 +55,6 @@ static int32	Solve_1(std::vector<std::string> input)
 	for (int32 i = 0; i < schedule.timestamps.size(); i++)
 	{
 		int32	id = schedule.timestamps[i];
-		int32	multiple = RoundUp(schedule.earliest, id) / id;
 		
 		int32	total = 0;
 		do 
