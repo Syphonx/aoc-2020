@@ -6,8 +6,9 @@
 
 struct Schedule
 {
-	int32				earliest;
-	std::vector<int32>	timestamps;
+	int64				earliest;
+	std::vector<int64>	timestamps;
+	std::vector<int64>	offsets;
 
 	Schedule()
 	{
@@ -15,14 +16,14 @@ struct Schedule
 	}
 };
 
-int32 RoundUp(int32 numToRound, int32 multiple)
+int64 RoundUp(int64 numToRound, int64 multiple)
 {
 	if (multiple == 0)
 	{
 		return numToRound;
 	}
 
-	int32 remainder = numToRound % multiple;
+	int64 remainder = numToRound % multiple;
 	if (remainder == 0)
 	{
 		return numToRound;
@@ -31,9 +32,9 @@ int32 RoundUp(int32 numToRound, int32 multiple)
 	return (numToRound + multiple - remainder);
 }
 
-static int32	Solve_1(std::vector<std::string> input)
+static int64	Solve_1(std::vector<std::string> input)
 {
-	int32						answer = 0;
+	int64						answer = 0;
 	Schedule					schedule;
 	std::vector<std::string>	parts;
 
@@ -41,7 +42,7 @@ static int32	Solve_1(std::vector<std::string> input)
 	schedule.earliest = std::stoi(input[0]);
 	Split(parts, input[1], ",");
 
-	for (int32 i = 0; i < parts.size(); i++)
+	for (int64 i = 0; i < parts.size(); i++)
 	{
 		if (parts[i] != "x")
 		{
@@ -49,14 +50,14 @@ static int32	Solve_1(std::vector<std::string> input)
 		}
 	}
 
-	int32		index = 0;
-	int32		highest = INT_MAX;
+	int64		index = 0;
+	int64		highest = INT_MAX;
 
-	for (int32 i = 0; i < schedule.timestamps.size(); i++)
+	for (int64 i = 0; i < schedule.timestamps.size(); i++)
 	{
-		int32	id = schedule.timestamps[i];
+		int64	id = schedule.timestamps[i];
 		
-		int32	total = 0;
+		int64	total = 0;
 		do 
 		{
 			total += id;
@@ -76,11 +77,61 @@ static int32	Solve_1(std::vector<std::string> input)
 	return answer;
 }
 
-static int32	Solve_2(std::vector<std::string> input)
+static int64	Solve_2(std::vector<std::string> input)
 {
-	int32		answer = 0;
+	int64						answer = 0;
+	Schedule					schedule;
+	std::vector<std::string>	parts;
 
-	printf("Answer: %d\n", answer);
+	Remove(input[0], ",");
+	Split(parts, input[1], ",");
+
+	for (int64 i = 0; i < parts.size(); i++)
+	{
+		if (parts[i] != "x")
+		{
+			schedule.timestamps.push_back(std::stoi(parts[i]));
+			schedule.offsets.push_back(i);
+		}
+	}
+
+	int64		searchIndex = 1;
+	int64		step = schedule.timestamps[0];
+	int64		t = step;
+
+	while (t < INT64_MAX)
+	{
+		int64	i = 0;
+		bool	success = true;
+
+		for (i = 0; i <= searchIndex; i++)
+		{
+			if ( (t + schedule.offsets[i]) % schedule.timestamps[i] != 0)
+			{
+				success = false;
+				break;
+			}
+		}
+
+		if (
+			(success) && 
+			(searchIndex == schedule.timestamps.size() - 1)
+		)
+		{
+			answer = t;
+			break;
+		}
+
+		if (success)
+		{
+			step *= schedule.timestamps[searchIndex];
+			searchIndex++;
+		}
+
+		t += step;
+	}
+
+	printf("Answer: %lld\n", answer);
 
 	return answer;
 }
@@ -98,11 +149,11 @@ void Day13::Part1()
 
 void Day13::Part2()
 {
-	//	assert(Solve_2(
-	//		{
-	//			"939",
-	//			"7,13,x,x,59,x,31,19"
-	//		}
-	//	) == 286);
-	//	Solve_2(GetStrInput("inputs/Day13.txt"));
+	assert(Solve_2(
+		{
+			"1",
+			"17,x,13,19"
+		}
+	) == 3417);
+	Solve_2(GetStrInput("inputs/Day13.txt"));
 }

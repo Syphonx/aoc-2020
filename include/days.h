@@ -17,3 +17,4 @@
 #include "../src/day11.h"
 #include "../src/day12.h"
 #include "../src/day13.h"
+#include "../src/day14.h"
