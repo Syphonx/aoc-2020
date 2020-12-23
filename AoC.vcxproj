@@ -160,6 +160,7 @@
     <ClCompile Include="src\day13.cpp" />
     <ClCompile Include="src\day14.cpp" />
     <ClCompile Include="src\day15.cpp" />
+    <ClCompile Include="src\day16.cpp" />
     <ClCompile Include="src\day2.cpp" />
     <ClCompile Include="src\day3.cpp" />
     <ClCompile Include="src\day4.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="src\day13.h" />
     <ClInclude Include="src\day14.h" />
     <ClInclude Include="src\day15.h" />
+    <ClInclude Include="src\day16.h" />
     <ClInclude Include="src\day2.h" />
     <ClInclude Include="src\day3.h" />
     <ClInclude Include="src\day4.h" />
@@ -196,6 +198,7 @@
     <Text Include="inputs\day13.txt" />
     <Text Include="inputs\day14.txt" />
     <Text Include="inputs\day15.txt" />
+    <Text Include="inputs\day16.txt" />
     <Text Include="inputs\day2.txt" />
     <Text Include="inputs\day3.txt" />
     <Text Include="inputs\day4.txt" />
