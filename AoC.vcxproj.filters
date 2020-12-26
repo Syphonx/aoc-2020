@@ -61,6 +61,12 @@
     <Filter Include="Source Files\Day 15">
       <UniqueIdentifier>{4704159b-446b-4e6e-b49b-e5227937f7ef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Day 16">
+      <UniqueIdentifier>{96c0e391-d652-41c8-ba09-75f94ad7cbad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Day 17">
+      <UniqueIdentifier>{5fa0c04f-74d1-4439-a937-3cc0c30891e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AoC.cpp">
@@ -112,7 +118,10 @@
       <Filter>Source Files\Day 15</Filter>
     </ClCompile>
     <ClCompile Include="src\day16.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Day 16</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day17.cpp">
+      <Filter>Source Files\Day 17</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -168,7 +177,10 @@
       <Filter>Source Files\Day 15</Filter>
     </ClInclude>
     <ClInclude Include="src\day16.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Day 16</Filter>
+    </ClInclude>
+    <ClInclude Include="src\day17.h">
+      <Filter>Source Files\Day 17</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -218,6 +230,9 @@
       <Filter>Inputs</Filter>
     </Text>
     <Text Include="inputs\day16.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="inputs\day17.txt">
       <Filter>Inputs</Filter>
     </Text>
   </ItemGroup>
