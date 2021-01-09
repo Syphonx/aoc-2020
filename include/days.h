@@ -22,3 +22,4 @@
 #include "../src/day16.h"
 #include "../src/day17.h"
 #include "../src/day18.h"
+#include "../src/day19.h"

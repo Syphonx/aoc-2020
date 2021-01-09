@@ -148,7 +148,7 @@ static std::vector<std::string> GetStrInput(std::string filepath)
 	return lines;
 }
 
-static bool Split(std::vector<std::string> &out_result, std::string s, std::string delimiter)
+static bool Split(std::vector<std::string> &out_result, const std::string s, const std::string delimiter)
 {
 	bool success = false;
 	size_t start = 0;

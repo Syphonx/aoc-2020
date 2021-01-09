@@ -70,6 +70,9 @@
     <Filter Include="Source Files\Day 18">
       <UniqueIdentifier>{fe22458e-5609-4511-99e9-9971b4dca432}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Day 19">
+      <UniqueIdentifier>{27d0d820-110d-4e1d-9622-a73a81202a25}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AoC.cpp">
@@ -128,6 +131,9 @@
     </ClCompile>
     <ClCompile Include="src\day18.cpp">
       <Filter>Source Files\Day 18</Filter>
+    </ClCompile>
+    <ClCompile Include="src\day19.cpp">
+      <Filter>Source Files\Day 19</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +197,9 @@
     <ClInclude Include="src\day18.h">
       <Filter>Source Files\Day 18</Filter>
     </ClInclude>
+    <ClInclude Include="src\day19.h">
+      <Filter>Source Files\Day 19</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="inputs\day1.txt">
@@ -245,6 +254,9 @@
       <Filter>Inputs</Filter>
     </Text>
     <Text Include="inputs\day18.txt">
+      <Filter>Inputs</Filter>
+    </Text>
+    <Text Include="inputs\day19.txt">
       <Filter>Inputs</Filter>
     </Text>
   </ItemGroup>
